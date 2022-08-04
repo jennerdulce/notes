@@ -1,0 +1,11 @@
+- ** Delete existing venv **
+    - `pipenv --venv` will direct you to virtural environments folder
+- 5131  pipenv shell
+- 5137  brew install freetype
+- 5138  brew install pkg-config
+- 5139  brew install libpng
+- python3 -m venv env/python
+- source env/python/bin/activate
+- pip3 install pip --upgrade
+- 5140  pip install -r requirements.txt
+- clear_database_and_run.sh
