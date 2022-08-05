@@ -57,7 +57,7 @@ General
 Task
 - Worked on creating a button for EVT Slides Platform
 - When clicked, button should expand the width of the side bar
-- Isolated components needed for this change
+- I was able to Isolate components needed for this change
 
 - Components are:
 	- BystanderLayout.tsx
@@ -86,27 +86,45 @@ Github
 
 
 TIPS
-- Control Click Things
+- Control + Click Things
 - Right click and peek references
 - Use VS code to commit
 - Check Conventional Commits when making your commit notes
 - Commit often per every little change
 	- Helps yourself in the future
-- Give yourself extra time. This ensure that you can estimate a good time while also finishing the task faster than you planned. Better to over deliever than to underperform
+- Give yourself extra time. This ensures that you can estimate a good time while also finishing the task faster than you planned. Better to over deliver than to underperform
 - When utilizing interfaces, you set default properties and values for them. If you have passed in a variable for those properties, then those values take priority over the default variables.
 
 
 Reflection
-I think today went very well. I felt a bit of imposter symdrome when monal said that it should take me a few hours to complete this task. When it took me longer.. roughly a little less than a day. Sam reassured me that Dane was on the same page as me and it took him 4 days to fix the button. Sam also reassured me that it takes roughly a month to become acclimated to a new codebase. Completed the task but I took me a little while with the help of Sam.
+I think today went very well. I felt a bit of imposter syndrome when Monal said that it should take me a few hours to complete this task. When it took me longer.. roughly a little less than a day. Sam reassured me that Dane was on the same page as me and it took him 4 days to fix the button. Sam also reassured me that it takes roughly a month to become acclimated to a new codebase. Completed the task but it took me a little while with the help of Sam.
 
 Working with interfaces was throwing me off because I thought we were having to reset the same properties of interfaces over and over again, when in fact the data was actually being passed through.. and we were setting default interface variables.
+
+I was able to isolate the components / files needed for my task and had a strategy to implement this change. I encountered some difficulties passing props via typescript and interfaces but Sam helped me get unstuck. I need to style the button.
+
+There is a bug that when the width is extended, the button that hides / shows the side bar does not close it entirely. I have to check and see how that button is working and may have to make some minor changes
 
 Day 4
 
 Notes
+- Ngrok hosts your ip so that people can connect to you
+- How to create globalContext
+1. useGlobal
+2. Create state using useState()
+3. Create the function
+4. Add pieces of data and set the static data type
+5. Add data to the hook
+6. Ensure that you include these variables whereever you put them
 
 TIPS
+- Turn autosave off
+- You are able to utilize older versions of your dependencies. Access to older documentation is always available (i.e. older version of material UI https://v4.mui.com/components/material-icons/)
 
 Reflection
+Today I continued to work on the button which worked great. I found that the right side bar is affected and is state retrieved through context. I figured that this was the trigger to opening and closing the side bar which I used in my code. Majority of the code is within the BystanderLecture.tsx file.
 
+I need to push a little harder and research more. Maybe become more familiar with typescript. I need to prove myself because There are a lot of things that I am wek in, however I also need to find a good balance when to fit this extra study time.
+
+I need to just stay focused and enjoy my days. Enjoy the process and try my hardest when im putting in that work.
 
