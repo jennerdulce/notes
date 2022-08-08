@@ -109,6 +109,9 @@ Day 4
 
 Notes
 - Ngrok hosts your ip so that people can connect to you
+- Socket.io are websockets
+
+
 - How to create globalContext
 1. useGlobal
 2. Create state using useState()
@@ -120,6 +123,8 @@ Notes
 TIPS
 - Turn autosave off
 - You are able to utilize older versions of your dependencies. Access to older documentation is always available (i.e. older version of material UI https://v4.mui.com/components/material-icons/)
+- Run `nvm use 14` when restart you computer
+	- Signal is terminal fails at 10%
 
 Reflection
 Today I continued to work on the button which worked great. I found that the right side bar is affected and is state retrieved through context. I figured that this was the trigger to opening and closing the side bar which I used in my code. Majority of the code is within the BystanderLecture.tsx file.
@@ -127,4 +132,16 @@ Today I continued to work on the button which worked great. I found that the rig
 I need to push a little harder and research more. Maybe become more familiar with typescript. I need to prove myself because There are a lot of things that I am wek in, however I also need to find a good balance when to fit this extra study time.
 
 I need to just stay focused and enjoy my days. Enjoy the process and try my hardest when im putting in that work.
+
+Day 5
+
+Notes
+- Continued to work on the button
+- Create a button component referenced from a different component
+- May have to create a hover effect but it is fully functional as of now
+
+TIPS
+
+Reflection
+I think it is better for me to wake up earlier in the mornings and to ensure I put in my hours. I feel that I am at my peak performance first thing in the morning. I finished my first task and it feels great! Big confidence boost in myself that I was able to finish this challenge in 1 week. Although I wish I was able to complete this task faster.
 
