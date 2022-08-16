@@ -1,6 +1,6 @@
 EVT Reflection / Notes
 
-Day 1
+Entry 1
 Notes
 
 - Setup for a big project takes some time
@@ -37,7 +37,7 @@ First day was great, I learned a lot. Set up is a beast. A walkthrough in `djang
 	- How docker works
 	- Workflow when making changes
 
-Day 2
+Entry 2
 
 Notes
 
@@ -46,7 +46,7 @@ TIPS
 Reflection
 
 
-Day 3
+Entry 3
 
 Notes
 
@@ -105,7 +105,7 @@ I was able to isolate the components / files needed for my task and had a strate
 
 There is a bug that when the width is extended, the button that hides / shows the side bar does not close it entirely. I have to check and see how that button is working and may have to make some minor changes
 
-Day 4
+Entry 4
 
 Notes
 - Ngrok hosts your ip so that people can connect to you
@@ -133,7 +133,7 @@ I need to push a little harder and research more. Maybe become more familiar wit
 
 I need to just stay focused and enjoy my days. Enjoy the process and try my hardest when im putting in that work.
 
-Day 5
+Entry 5
 
 Notes
 - Continued to work on the button
@@ -145,3 +145,81 @@ TIPS
 Reflection
 I think it is better for me to wake up earlier in the mornings and to ensure I put in my hours. I feel that I am at my peak performance first thing in the morning. I finished my first task and it feels great! Big confidence boost in myself that I was able to finish this challenge in 1 week. Although I wish I was able to complete this task faster.
 
+- I was able to complete the button. There was an issue with the video being rendered with full sized dimensions which was resolved by configuring the containing div element
+- I also converted the local state into a global state in order to make it a little bit cleaner. pulling in the data by the useContext hook in necessary components for data, avoiding my previous implementation passing data/props from component to component.
+
+Entry 6
+
+Notes
+- Continued to work on the button
+
+
+TIPS
+- Successfully implemented a custom MaterialUI Icon using <SvgIcon> and an SVG image. Refer to ScreenToggleButton.tsx
+- Ensure to add the viewbox as an attribute to the <SvgIcon /> component
+- Used onMouseEnter and onMouseLeave on the div component as a hover toggle
+
+Reflection
+I think it is better for me to wake up earlier in the mornings and to ensure I put in my hours. I feel like I did well on this task.
+
+Entry 7
+
+Notes
+- Off day
+
+New Task
+- Create a form so that a University Admin can create accounts for a Professor as well as a Department Admin
+
+TIPS
+- 
+
+Reflection
+I think it is better for me to wake up earlier in the mornings and to ensure I put in my hours. I feel like I did well on this task.
+
+Entry 8
+
+Notes
+- QA to ensure that AI created correct data
+- Preview snapshots
+	- 5 snapshots per slide
+	- if progression is losing c
+- " I need to to content process"
+- replace learn evt ai
+with content-prod.bloom.lol
+replace n
+with slides
+- fix slides
+click start 'fully processed'
+- click saved
+	- Press only once
+- Magic Link
+	- Course management
+	- Click on course
+	- Click Magic Link
+	- Click Copy
+	- Check to see if works on incognito window
+
+TIPS
+- 
+
+Reflection
+I
+
+Entry 9
+
+Notes
+- I have been able to connect the front end to the backend successfully
+- Create a new url in urls.py and create a method in views.py that is triggered when the endpoint is called
+- I have learned to used the redux extension tool efficiently to see what pieces of state I have access to
+- I may need to add an extra piece of state for the departments that users are under
+- When developing code for the method, I had to sift through all of the models  in order to create a user correctly
+- There was one main Model called called ModelUserProfile
+- This main model had different values for the columns, the values were specifically other tables. So that in order to put a value in any of these columns, the other Models had to first be created and then inserted into the ModelUserProfile
+
+TIPS
+- Isolate files you need
+- Multi window on Mac is super helpful
+Process: Make a variable that GETS a specific model from a different model based on university name, department, or any other information. In a sense you are not creating a new instance of that model, you are retrieving it. After retrieved, you can used the retrieved model as a value for your main model (ModelUserProfile)
+
+Reflection
+Still learning A LOT. I am super sad that Sam left. He was a big help and I feel like working under a senior is a great feeling because you are taken care of. While being alone it feels like 'Oh man I need to get this done..' this feeling can get overwhelming especially when you hit a blocker. Who are you supposed to ask for help? So far everything has been working out fine and I've been doing my best to accomplish my tasks. I just hope that I am doing well and that they see my efforts.
