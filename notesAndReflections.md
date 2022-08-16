@@ -223,3 +223,26 @@ Process: Make a variable that GETS a specific model from a different model based
 
 Reflection
 Still learning A LOT. I am super sad that Sam left. He was a big help and I feel like working under a senior is a great feeling because you are taken care of. While being alone it feels like 'Oh man I need to get this done..' this feeling can get overwhelming especially when you hit a blocker. Who are you supposed to ask for help? So far everything has been working out fine and I've been doing my best to accomplish my tasks. I just hope that I am doing well and that they see my efforts.
+
+
+Entry 10
+
+Notes
+- I had trouble linking the department with the university. I was previously using 'department' as the user access level but it wasn't working..
+- So i knew that the student enrollment was for sure working.. So I knew that all i needed to do was fix the permsgroup. So i looked back in the permsgroups on pfzer and tried 'dept' instead of 'department' and it worked
+- Finishing up this task there are a few things on my mind:
+When signed in as a Department Admin
+As a Department admin should I be able to see all of the departments? or only the departments I am assigned to?
+There is no state that is created / data created from the back end that shows exactly what departments my account is attached to or is there?
+When adding an admin user, should they be added to this list of bloom admin users?
+Styling notes
+
+TIPS
+
+
+Reflection
+This project is coming together. Finally.. I finished the general functionality of what we wanted. What we wanted was to be able to create a new Department / Professor Admin account through Add Admin User. Department Admins may create accounts for Professor Admins.
+Todo:
+I need to test out the button
+Ensure emails and password resets are being sent
+Answer the questions that I had
