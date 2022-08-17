@@ -168,7 +168,130 @@ Notes
 - Off day
 
 New Task
-- Create a form so that a University Admin can create accounts for a Professor as well as a Department Admin
+- Ver: 0
+Next Task:
+Create Admin Accounts Workflow as University Admin
+	- Look @ Students Create Accounts
+		- Similar but an Admin making another account for an Admin
+		- As a University Admin, I want to be able to create Admin accounts for each Department Admins and Professor Admins.
+
+Notes
+	- University Admin
+		- Can make Department & Professor Admin Accounts
+		- Can choose Departments for Department and Professor Admins
+	- Department Admin
+		- Can only make  Professor Admin Accounts
+		- Department Admins can choose which course? For Professor Admins
+
+Create Account
+‘I am a’ field should differ from Department and University Admins
+Password, name, I am a…
+University  Admins should be able to choose which Department for Department Admin Accounts
+Department Admin Accounts are already within a Department that is assigned by the University  Admin
+Exclude grade level and major. Record keeping
+Like how prof adds a student
+Have University Admin add Department Admin or Professor Admin
+Have dept admin add to course
+
+
+Model user profile
+Permsgroups
+4 per university
+Student
+Prof
+(University) Admin
+Dept
+From the for what group I create the account for will reflect on this permsgroups
+Universities all be the same
+
+University Admins should be able to make a Department / Professor Admin for any department
+When creating a Department Admin as a University Admin
+After selecting Department Admin or Professor Admin:
+Will need a dropdown for Department options that will assign the new account to that specific apartment same with
+When creating a Professor Admin as a Department Admin
+Will automatically be assigned the same department as the Department Admin
+
+Check Enrolll User by API on backend
+Ref:
+Course Management
+User Access
+Enroll User
+DjangoAPI SendEmailSignupEnrollment
+
+Todo:
+DJANGO Restframework
+Frontend
+Isolate components needed / to reference
+Look for API calls to backend
+Backend
+URL
+Ref: email_signup_enrollment
+Views / Methods connected to URL
+Ref: email_signup_enrollment method in views.py
+Start by printing request data within method just to check if endpoint is being accessed correctly and to see if dictionary looks correct
+
+
+Make Admins with EVT BLOOM ACCESS as a selection on the left Admin Panel
+	- Clicking the selection will open up the same page
+Rename to Admin User Management
+Populating departments for the logged in university admin
+Grab current logged in user object
+Grab list of departments affiliated with the current logged in user based on college affiliation
+Display departments within the dropbox
+
+
+
+
+I am able to create a new user with the ‘add admin user button’
+Questions I need answered:
+	- Given the only information that I have, How will I create a new admin user and set the correct credentials / information for that use
+In order to make a department (my_department) Seems like you need a course Object which also requires a semester (my_unisem)
+Things I need that I do not have
+sem_id
+course_id
+Without these I cannot add to my department?
+With this, I need to also figure out how the tables are linked together
+Look into models / schemas
+
+ModelUniveristy
+Only need nameid=request.data[‘univ_id’]
+
+ModelUniDepartment
+nameid=request.data[‘department’]
+university=my_univ
+
+
+
+Customers interested
+Form a demo
+They upload
+We create
+And send them back
+
+
+
+Click Verification Link
+	Activates Account
+	Good to go
+
+
+Dept Admin
+	- Modify All courses: done
+Prof Admin
+	- Create Courses
+
+Send Account  -> Create Account and Email User
+:semi-done
+
+Newly Create Admin Accounts should show up under Admin User Management: done
+
+In admin user management
+If professor account cannot add admin users: Done
+
+ Ver 1: 
+Professor can request if TA can create an account
+IF they haven’t Verified, Show in a different color or some sort of flag
+
 
 TIPS
 - 
@@ -225,17 +348,19 @@ Reflection
 Still learning A LOT. I am super sad that Sam left. He was a big help and I feel like working under a senior is a great feeling because you are taken care of. While being alone it feels like 'Oh man I need to get this done..' this feeling can get overwhelming especially when you hit a blocker. Who are you supposed to ask for help? So far everything has been working out fine and I've been doing my best to accomplish my tasks. I just hope that I am doing well and that they see my efforts.
 
 
+
 Entry 10
 
 Notes
-- I had trouble linking the department with the university. I was previously using 'department' as the user access level but it wasn't working..
-- So i knew that the student enrollment was for sure working.. So I knew that all i needed to do was fix the permsgroup. So i looked back in the permsgroups on pfzer and tried 'dept' instead of 'department' and it worked
-- Finishing up this task there are a few things on my mind:
-When signed in as a Department Admin
-As a Department admin should I be able to see all of the departments? or only the departments I am assigned to?
-There is no state that is created / data created from the back end that shows exactly what departments my account is attached to or is there?
-When adding an admin user, should they be added to this list of bloom admin users?
-Styling notes
+- I was able to complete the following tasks:
+	- Show only the departments the Department Admins are Tied to
+	- 'Add Admin User' Button creates an account however does not send emails locally
+	- New Admin Users show up on the Admin User Management
+	- Professors have no access to seeing the admin user management
+- Questions:
+	- Adding an Admin User like this adds a Bloom Account?
+	- Are all accounts bloom accounts?
+	- When creating a course as a professor, I have no access to semesters I need to know how this works
 
 TIPS
 
