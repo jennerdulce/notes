@@ -354,13 +354,18 @@ Entry 10
 Notes
 - I was able to complete the following tasks:
 	- Show only the departments the Department Admins are Tied to
-	- 'Add Admin User' Button creates an account however does not send emails locally
 	- New Admin Users show up on the Admin User Management
 	- Professors have no access to seeing the admin user management
+- 'Add Admin User' Button creates an account however does not send emails locally
+
+- What I need to do:
+	- Select Multiple departments on 'Add Admin User'
+
 - Questions:
 	- Adding an Admin User like this adds a Bloom Account?
 	- Are all accounts bloom accounts?
 	- When creating a course as a professor, I have no access to semesters I need to know how this works
+	- Out of curiosity how will University Admins be assigned their accounts
 
 TIPS
 
@@ -371,3 +376,50 @@ Todo:
 I need to test out the button
 Ensure emails and password resets are being sent
 Answer the questions that I had
+
+Entry 10
+
+Notes
+- I looked into email problem
+- Testing on local
+	- Again account creation seems consistent
+	- Admins from different universities cannot see other accounts
+	- Department Admins can only create other Department Admin accounts under the departments they were assigned to by the University Admin
+	- Professor Accounts cannot see the button and can only create courses under the department that the Department Admin / University Admin selected for them during the account creation
+	- On the 'Course Management' Tab, for the 'Departments' Dropdown, what should we display here? All departments? or only departments that user is assigned to?
+
+TIPS
+
+
+Reflection
+
+Entry 11
+
+Notes
+- Merging Notes
+	- Push up to GitLab
+	- Merge
+	- Run python scripts
+		- Consists of opening docker container
+		- Creatine new image
+		- Saving
+		- Restarting Server and uninstalling and reinstalling… things
+		- Compile, build, and redeploy to Azure
+- TODO:
+	- User Stories
+	- Test Email
+	- Ensure that cannot see other university staff / courses
+	- Proper conditional rendering of staff positions / authorization
+	- bug: Staff cannot see / pick departments if there is no courses created for them.
+		- I personally think that staff should be able to still see and pick the department they have access to, even though there are no courses at the time.
+
+TIPS
+- Term date was not showing up because there is no existing term that is currently active
+All dates listed in term / quarter were invalid / expired
+Solution: change in 'Model Uni Semester' end date in Pfizer
+Now ALL Admins are able to create courses and see
+
+Reflection
+Monal has a wealth of knowledge and there are a lot of things happening that I am unaware of that he does. Just ask him and he will lead the way. This task has been good, I feel like a little drawn out. I have been working on it for a while now but finished the logic a while ago. Next step is to check and see if the email is being sent out after Admins create an account through 'Add Admin User'.. If not, that is a problem that I will have to figure out and fix. So far, the AWS credentials are on my mind and are the solution on how to fix it.. After my changes have been deployed on to QA, I will create user stories for each role, Univ, Dept, Prof, and Student profiles. And see how creating courses and new Admins affects each of the screens. Also Make a superuser admin. Will need a 2 separate University Admins in order to make sure that Admins from other universities cannot see courses / Admins from universities other than their own.
+
+Just do the task the best you can, ask questions, and be productive. Do not worry too much about it. Report to Monal of any findings and that's all you need to do. The things that Sam was doing is out of my job description. Just stick to what I am given for the time being! But be ready when to learn. Study things and read up on material on your own time.
