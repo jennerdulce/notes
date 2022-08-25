@@ -423,3 +423,136 @@ Reflection
 Monal has a wealth of knowledge and there are a lot of things happening that I am unaware of that he does. Just ask him and he will lead the way. This task has been good, I feel like a little drawn out. I have been working on it for a while now but finished the logic a while ago. Next step is to check and see if the email is being sent out after Admins create an account through 'Add Admin User'.. If not, that is a problem that I will have to figure out and fix. So far, the AWS credentials are on my mind and are the solution on how to fix it.. After my changes have been deployed on to QA, I will create user stories for each role, Univ, Dept, Prof, and Student profiles. And see how creating courses and new Admins affects each of the screens. Also Make a superuser admin. Will need a 2 separate University Admins in order to make sure that Admins from other universities cannot see courses / Admins from universities other than their own.
 
 Just do the task the best you can, ask questions, and be productive. Do not worry too much about it. Report to Monal of any findings and that's all you need to do. The things that Sam was doing is out of my job description. Just stick to what I am given for the time being! But be ready when to learn. Study things and read up on material on your own time.
+
+Entry 12
+
+Notes
+- Error 1
+
+｢wdm｣: Compiled with warnings.
+[HPM] Error occurred while trying to proxy request /api/universities/ucsd/all/false/false/0/0/ from localhost:3000 to http://localhost:8000 (ECONNRESET) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+
+- What causes the error?
+	- When I click Admin User Management
+
+
+
+- Error 2
+
+num if not limit or num < limit else 'more than %s' % (limit - 1),
+web_1  | evtuserprofile.modelpgroup.ModelUserPermissionsGroup.MultipleObjectsReturned: get() returned more than one ModelUserPermissionsGroup -- it returned 4!
+
+- What causes the error?
+
+	- When attempting to create a prof account (Univ and Dept)
+	- I tried to create a new University Admin for USD
+		- When attempting to create a new Department Admin for USD
+
+- When am I able to create a prof account?
+	- Already be in Admin User Management, signed in as Univ Admin
+	- restarted the frontend
+	- Refresh localhost:3000 page
+	- Sometimes it works
+	- Message upon creation and nothing else:
+
+​​NEW ENROLLED USER: prof@gmail.com
+
+- Today as I was logged in as an admin user, I was able to create a Department and Professor Admin Account with no problems
+- I logged into the Department account that I created and was able to create a Department Admin Account
+- Error came up when I tried to create a Professor Account WHILE logged into a Department Admin Account
+
+num if not limit or num < limit else 'more than %s' % (limit - 1),
+web_1  | evtuserprofile.modelpgroup.ModelUserPermissionsGroup.MultipleObjectsReturned: get() returned more than one ModelUserPermissionsGroup -- it returned 4!
+
+- However, when I logged back into an University Admin Account and attempted to create a new Professor, the same error occurred
+
+num if not limit or num < limit else 'more than %s' % (limit - 1),
+web_1  | evtuserprofile.modelpgroup.ModelUserPermissionsGroup.MultipleObjectsReturned: get() returned more than one ModelUserPermissionsGroup -- it returned 4!
+
+- I am unsure what is causing it but I have found that it may be linked to this error in the front end
+
+｢wdm｣: Compiled with warnings.
+[HPM] Error occurred while trying to proxy request /api/universities/ucsd/all/false/false/0/0/ from localhost:3000 to http://localhost:8000 (ECONNRESET) (https://nodejs.org/api/errors.html#errors_common_system_errors)
+
+- Even through these errors are present, I am able to create a Department Account consistently with no problems.
+
+- Error 3
+
+web_1  |     num if not limit or num < limit else 'more than %s' % (limit - 1),
+web_1  | lectureserve.modeldepartment.ModelUniDepartment.MultipleObjectsReturned: get() returned more than one ModelUniDepartment -- it returned 4!
+
+- What causes the error?
+
+	- When trying to create an Dept account (dept: general) with the USD University Admin
+
+- Error 4
+
+web_1  |     num if not limit or num < limit else 'more than %s' % (limit - 1),
+web_1  | evtuserprofile.modelpgroup.ModelUserPermissionsGroup.MultipleObjectsReturned: get() returned more than one ModelUserPermissionsGroup -- it returned 4!
+
+- What causes the error?
+
+	- When trying to create an Prof account (dept: electrical eng) with the USD University Admin
+
+
+TIPS
+- Broken until proven otherwise
+	- Essays, have grammatical errors
+	- Same with code, so many edge cases and other things that can cause issues
+
+Reflection
+M
+
+Entry 12
+
+Notes
+Errors
+- I was able to fix those 2 errors I had with the help of dane
+- We added an extra argument when getting the department. The problem was that it was searching for a general department but multiple universities have general departments, so adding the university as an argument with the get query was a quick and easy fix. Selecting the general department while on a USD Admin account seems consistent and I am assuming that it will work for all other organizations
+- Second error when attempting to create a Professor Admin Account:
+- At first we thought we fixed the problem by dumping and rebuilding the database. The fix did not persist..
+- I found out that the problem was, when professors create courses, a new permission is also created. The query method being used for creating a new course is 'get or create'
+- I proceeded to change to it to 'get' only. This problem only happens with professors..
+- It fixes the current problem and does not create a new permission
+- However, it causes a new one where after a course has been created, the professor is unable to see their course on the dashboard
+- Logged into different users such as University or Department Admins, We can see the newly created course by the professor
+- As of now, I am going back and forth reverting the code to see what data changes or remains so that I can find how the courses are being displayed.
+- Or I guess why is creating a new permission necessary for professors to post a course..?
+Files:
+	backend: add_recording.py
+
+- Other thing is when Admins create accounts, they are set to inactive
+- Monal I remember you seeing me create and activate an account, by setting a password. I tried using the localhost email link that it sends and changing it to localhost 3000 but the link does not work anymore. when submitting the new password it gives me a 403 forbidden error.
+- I found out that you can only reset your password if the user is set to Active, then by using the link you can activate your account by setting a new password
+
+Containers
+- Containers make a little more sense to me, you hop into a container by typing sh docker.sh which is pretty much is the same as you going into a different computer environment's terminal, in a container, it has everything all the different parts in 'images' processor, frameworks, everything
+from here you can also run your basic terminal commands for python, node, etc etc. typically what happens is that you enter a container, and you run a script that will do all things necessary to start up your venv downloading all dependencies. Once ran you can exit the venv. type docker compose up which will start the env and run it on your local
+
+TIPS
+- Restart DB
+Download docker extension on vs code
+Right click compose down
+sh docker_init.sh 
+Docker compose-up
+Ver2:
+Sh enter_container.sh
+python3 manage.py flush
+
+
+
+Create super user
+While in container:
+Sh enter_container.sh
+python3 manage.py createsuperuser
+python3 manage.py loaddata dump_db_NO_USER_SENSITIVE_DATA_1_20_2021.json 
+Python3 initialize_db.py
+
+
+Reflection
+
+- Yesterday I was working on the 2 problems I expressed above, the first half of my day I was console logging and tinkering with the emails trying to get it to work while is_active is false, was unsuccessful. For some reason, the email activation link does not work while is_active is false. My guess is that it is some permissions issue. Which, I spoke with Dane and Monal, that it makes sense that users cannot even login without setting their password.. Also, the logic behind permissions is changing soon, so me trying to fix this issue is kind of a waste of time. It makes sense that the is_active should be false upon account creation, but it is a not an important fix at the time being.
+
+- Second bug with when retrieving the default professor model. After spending so much time trying to figure out how to go about this. Monal says that the creation of new Permissions for newly created courses are required and are necessary.. So with that in mind I had to find a way to configure the query data for the 'admin_signup_enrollment' method. Dane and I found that the name property is blank for the Permissions Groups that are generated by courses. Previously we were using 'nameid' as part of the query, however the 'nameid' property was being generated with new courses. This was the problem, switching nameid to name fixed the issue. Previously searching by nameid and univ was too vague because the all permissions had this same information.
+
+- I really love my team, they are reassuring and expect the feelings and struggle I am going through. I receive nothing back but positivity and support.
